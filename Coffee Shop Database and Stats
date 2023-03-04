@@ -1,0 +1,28 @@
+--Create a coffee shop database
+
+CREATE TABLE coffee_shop (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, origin TEXT);
+
+INSERT into coffee_shop VALUES (1, "espresso cup", 10, 5, "Italy");
+INSERT into coffee_shop VALUES (2, "Fellow Kettle", 3, 150, "USA");
+INSERT into coffee_shop VALUES (3, "Chemex", 5, 50, "USA");
+INSERT into coffee_shop VALUES (4, "8 oz cappuccino cup", 10, 7, "Seattle");
+INSERT into coffee_shop VALUES (5, "12 oz latte mug", 10, 10, "Seattle");
+INSERT into coffee_shop VALUES (6, "glass latte cup", 20, 15, "Seattle");
+INSERT into coffee_shop VALUES (7, "t-shirt", 10, 25, "Seattle");
+INSERT into coffee_shop VALUES (8, "crew neck sweater", 10, 40, "Seattle");
+INSERT into coffee_shop VALUES (9, "hat", 10, 35, "Seattle");
+INSERT into coffee_shop VALUES (10, "espresso beans", 20, 18, "Columbia");
+INSERT into coffee_shop VALUES (11, "tropical beans", 20, 18, "Costa Rica");
+INSERT into coffee_shop VALUES (12, "juicy beans", 20, 20, "Honduras");
+INSERT into coffee_shop VALUES (13, "chocolatey beans", 15, 18, "Ethiopian");
+INSERT into coffee_shop VALUES (14, "fruity beans", 15, 18, "Rwanda");
+INSERT into coffee_shop VALUES (15, "honey beans", 15, 15, "Columbia");
+
+--display the database ordered by descending price 
+SELECT * FROM coffee_shop ORDER BY price desc;
+
+--display the total quantity of each item 
+SELECT item, SUM(quantity) FROM coffee_shop GROUP BY item;
+
+--display the average price of items you can purchase at the coffee shop
+SELECT AVG (price) FROM coffee_shop;
