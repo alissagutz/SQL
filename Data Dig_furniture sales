@@ -2,6 +2,7 @@
 Sales from an online furniture store
 Collected by: https://www.khanacademy.org/profile/charlesb2000/
 */
+
 CREATE TABLE sales(
   ID INTEGER  NOT NULL PRIMARY KEY
 , transaction_date TEXT
@@ -135,7 +136,6 @@ FROM sales
 GROUP BY country
 HAVING COUNT(product) >3;
 
-
 SELECT price,
 CASE
     WHEN price > 1900 THEN "Full Price"
@@ -143,6 +143,14 @@ CASE
     ELSE "New Years Sale Item"
 END AS "New_Years_Sale"
 FROM sales;
+
+SELECT * FROM sales WHERE country = "United states" OR country = "United Kingdom";
+
+SELECT name, country, SUM(price) FROM sales WHERE country = "United states" AND price > 3000 GROUP BY name ORDER BY price ASC;
+
+
+
+
 
 
 
