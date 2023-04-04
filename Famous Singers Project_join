@@ -1,0 +1,39 @@
+/* Create tables about the singers and what they do here */
+
+CREATE TABLE singers (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+age INTEGER);
+
+INSERT INTO singers (name, age) VALUES ("Stevie Nicks", "65");
+INSERT INTO singers (name, age) VALUES ("Miley Cyrus", "30");
+INSERT INTO singers (name, age) VALUES ("Taylor Swift", "32");
+INSERT INTO singers (name, age) VALUES ("Beyonce", "37");
+INSERT INTO singers (name, age) VALUES ("Rihanna", "35");
+INSERT INTO singers (name, age) VALUES ("Fletcher", "29");
+INSERT INTO singers (name, age) VALUES ("Dua Lipa", "27");
+INSERT INTO singers (name, age) VALUES ("SZA", "30");
+INSERT INTO singers (name, age) VALUES ("Lizzo", "31");
+INSERT INTO singers (name, age) VALUES ("Natalia Lafourcade", "39");
+
+CREATE TABLE singer_info (
+singer_id INTEGER,
+name TEXT,
+genre TEXT,
+songtitle TEXT);
+
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (1, "Stevie Nicks", "rock", "Landslide");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (2, "Miley Cyrus", "pop", "Flowers");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (3, "Taylor Swift", "pop", "Lavendar Haze");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (4, "Beyonce", "RnB", "Cuff It");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (5, "Rihanna", "RnB", "Diamonds");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (6, "Fletcher", "pop", "Better Version");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (7, "Dua Lipa", "pop", "Levatating");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (8, "SZA", "rnb", "Doves in the Wind");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (9, "Lizzo", "RnB", "Special");
+INSERT INTO singer_info (singer_id, name, genre, songtitle) VALUES (10, "Natalia Lafourcade", "latin pop", "Soledad y el Mar");
+
+/Join two tables with 
+SELECT singer_info.singer_id, singers.name, singer_info.songtitle 
+FROM singers JOIN singer_info ON singers.id= singer_info.singer_id;
+
